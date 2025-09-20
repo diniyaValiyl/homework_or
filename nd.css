@@ -1,0 +1,20 @@
+body, a {
+    background-color: #808080; /* Серый цвет фона */
+    color: #FFFFFF; /* Белый цвет текста */
+}
+
+/* Стили для изображений */
+.box300 {
+    width: 400px;
+    height: 300px;
+    background-color: #FFFFFF; /* Белый фон для блока */
+}
+
+p{
+	color: black;
+}
+
+#new{
+	color: red;
+	text-decoration:underline blue;
+}

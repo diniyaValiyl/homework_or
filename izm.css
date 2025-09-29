@@ -18,13 +18,6 @@ header {
     text-decoration:underline blue;
 }
 
-
-naw {
-    background-color: #00ADB5;
-    color: #FFFFFF; 
-}
-
-
 img {
     background-color: #FFFFFF; 
 }
@@ -65,10 +58,6 @@ footer {
     text-decoration: none;
 }
 
-    .nav-naw:hover {
-        background-color: #00858b;
-    }
-
 .con-bar {
     display: inline-block;
     padding-left: 5em;
@@ -103,5 +92,117 @@ footer {
 
 
 .input-row {
-    margin: 2em;
+    margin: 2em; 
+}
+
+
+.dropdown-content { display: none; }
+.dropdown-content.show { display: block; }
+
+
+.slide { display: none; }
+.slide.active { display: block; }
+
+
+.dot.active { background-color: #00ADB5; }
+
+
+.dark-theme { 
+    background-color: #2a2a2a; 
+    color: #ffffff; 
+}
+
+#theme-toggle, #load-content-btn, .slider-btn, .menu-trigger {
+    background-color: #00ADB5;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.cards-container {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.card {
+    display: none;
+    min-width: 100%;
+}
+
+.card.active {
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+.timer-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.timer-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.timer-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.timer-label {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme .timer-item {
+    background: #2d2d2d;
+}
+
+.dark-theme .slider-btn {
+    background: rgba(255,255,255,0.3);
 }

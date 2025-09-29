@@ -1,60 +1,136 @@
 ﻿<!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Общая информация 1 стр</title>
+    <title>Общая информация</title>
     <link href="izm.css" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        Первый сайт созданный мной 
-    </header>
-    <div>
+    
+    <header style="position: relative;">
+        <h1>Первый сайт созданный мной</h1>
         
+        <button id="menu-trigger" >Тыкни ;)</button>
+        <div id="dropdown-content" class="dropdown-content">
+            <a href="#slider">Фотографии</a>
+            <a href="#about">Обо мне</a>
+            <a href="#timer">День рождения</a>
+            <a href="#poem">Стихотворение</a>
+        </div>
+        
+        <div class="theme-switcher">
+            <button id="theme-toggle">Темная тема</button>
+        </div>
+    </header>
+    
+    <div>
+        <nav>
             <a href="shool.html" class="nav-naw">Информ</a>
-            <a href="eda.html" class="nav-naw">любимая еда</a>
+            <a href="eda.html" class="nav-naw">Любимая еда</a>
             <a href="pozor moi EGE.html" class="nav-naw">ЕГЭ</a>
             <a href="obr.html" class="nav-naw">Обратная связь</a>
-            <div class="con-bar">
-                <b>Валиуллина Диния Расиховна</b>
-                <p>23.10.2006</p>
-
-                <img src="C:/foto/1.jpg" class="box500">
-
-                <p>Стихотворение:</p>
-                <div>
-                    Яз,Яз,Яз житэ,</br>
-
-                    Тэрэзэне ачтылар.</br>
-
-                    Тып,Тып,Тып итэ</br>
-
-                    Эре-эре тамчылар,
-                </div>
-
-                <p> </p>
-                <p id="new">МБОУ Гимназия №96 города Казань </p>
-                <p>Россия, Казань</p>
-
-                <h3>Пифагор:</h3>
-
-                <img src="C:/foto/2.jpg" class="box300">
-
-
-
-                <a href="https://www.kinopoisk.ru/film/280172/" class="nav-naw" style="width: 10em;">Мой любимый фильм</a>
-            </div>
+        </nav>
     </div>
+    
+    <main>
+        <section id="slider" class="slider-section">
+            <h2>Мои фотографии</h2>
+            <div class="slider-container">
+                <button class="slider-btn prev" id="arrowLeft">‹</button>
+                
+                <div class="cards-container">
+                    <div class="card active">
+                        <img src="foto/7.jpg" alt="Project 0" class="card-img-top1 box300">
+                        <div class="card-body">
+                            <p class="card-text1">Project 0</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="foto/6.jpg" alt="Project 1" class="card-img-top2 box300">
+                        <div class="card-body">
+                            <p class="card-text2">Project 1</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-btn next" id="arrowRight">›</button>
+            </div>
+        </section>
+
+        <section id="timer" class="timer-section">
+            <h2>До моего дня рождения осталось:</h2>
+            <div class="timer-container">
+                <div class="timer-item">
+                    <span class="timer-number timer__days">00</span>
+                    <span class="timer-label">дней</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number timer__hours">00</span>
+                    <span class="timer-label">часов</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number timer__minutes">00</span>
+                    <span class="timer-label">минут</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number timer__seconds">00</span>
+                    <span class="timer-label">секунд</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="con-bar">
+            <h2>Обо мне</h2>
+            <div class="profile-info">
+                <b>Валиуллина Диния Расиховна</b>
+                <p><strong>Дата рождения:</strong> 23.10.2006</p>
+
+                <div class="school-info">
+                    <p><strong>Учебное заведение:</strong> МБОУ Гимназия №96 города Казань</p>
+                    <p><strong>Местоположение:</strong> Россия, Казань</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="poem" class="poem-section">
+            <h2>Любимое стихотворение</h2>
+            <div class="poem-text">
+                <p>Яз, Яз, Яз житэ,</p>
+                <p>Тэрэзэне ачтылар.</p>
+                <p>Тып, Тып, Тып итэ</p>
+                <p>Эре-эре тамчылар,</p>
+            </div>
+        </section>
+
+        <section class="interests-section">
+            <div class="pythagoras">
+                <h3>Пифагор</h3>
+                <img src="C:\для ht\foto\2.jpg" alt="Пифагор" class="box300" onerror="this.style.display='none'">
+            </div>
+            
+            <div class="movie-link">
+                <a href="https://www.kinopoisk.ru/film/280172/" class="nav-naw movie-btn" target="_blank">
+                    Мой любимый фильм
+                </a>
+            </div>
+        </section>
+
+        <section id="dynamic-content" class="dynamic-section">
+            <h2>Интересные факты</h2>
+            <button id="load-content-btn" class="load-btn">Показать факты</button>
+            <div id="content-container" class="content-container"></div>
+        </section>
+    </main>
+
     <footer>
         <div class="footer">
-            <i id="new">
-                КФУ
+            <i>
+                КФУ<br>
                 2025 ДЗ ПО ПРОГЕ Валиулиной Динии
             </i>
         </div>
     </footer>
-</body>
 
+    <script src="scrips.js"></script>
+</body>
 </html>

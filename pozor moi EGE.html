@@ -1,23 +1,27 @@
 ﻿<!DOCTYPE html>
-<html>
-
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <title>ЕГЭ</title>
     <link href="izm.css" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        Первый сайт созданный мной
+    <header style="position: relative;">
+        <h1>Первый сайт созданный мной</h1>
+        
+        <div class="theme-switcher">
+            <button id="theme-toggle">Темная тема</button>
+        </div>
     </header>
+
     <div>
+        <nav>
+            <a href="shool.html" class="nav-naw">Информ</a>
+            <a href="eda.html" class="nav-naw">Любимая еда</a>
+            <a href="pozor moi EGE.html" class="nav-naw">ЕГЭ</a>
+            <a href="obr.html" class="nav-naw">Обратная связь</a>
+        </nav>
 
-
-        <a href="shool.html" class="nav-naw">Информ</a>
-        <a href="eda.html" class="nav-naw">любимая еда</a>
-        <a href="pozor moi EGE.html" class="nav-naw">ЕГЭ</a>
-        <a href="obr.html" class="nav-naw">Обратная связь</a>
         <div class="con-bar">
             <table>
                 <thead>
@@ -52,14 +56,17 @@
             </table>
         </div>
     </div>
+
+
     <footer>
         <div class="footer">
             <i id="new">
-                КФУ
+                КФУ<br>
                 2025 ДЗ ПО ПРОГЕ Валиулиной Динии
             </i>
         </div>
     </footer>
-</body>
 
+    <script src="scrips.js"></script>
+</body>
 </html>

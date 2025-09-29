@@ -1,14 +1,3 @@
-const menu = document.getElementById('menu-trigger');
-if (menu) {
-    menu.onclick = function() {
-        const m = document.getElementById('dropdown-content');
-        m.classList.toggle('show');
-    }
-}
-
-
-
-
 const mode = [
     {
         name: "Project 0",
@@ -178,6 +167,14 @@ if (loadBtn) {
     }
 }
 
+
+const menu = document.getElementById('menu-trigger');
+if (menu) {
+    menu.onclick = function() {
+        const m = document.getElementById('dropdown-content');
+        m.classList.toggle('show');
+    }
+}
 
 
 function initValidation() {

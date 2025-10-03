@@ -176,8 +176,11 @@ if (menu) {
     }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6c946289a511717ac9e751be96dc8cfce4fd2351
 
 function initValidation() {
     const validators = {

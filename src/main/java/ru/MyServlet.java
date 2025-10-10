@@ -1,4 +1,4 @@
-package ru.itis;
+package ru;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

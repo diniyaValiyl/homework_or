@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Добавление товара в корзину
 function addToCart(productId) {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../cart', true);
+    xhr.open('POST', '/test2/cart', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -46,7 +46,7 @@ function updateCartCounter() {
 // Загрузка корзины с сервера
 function loadCartFromServer() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '../cart', true);
+    xhr.open('GET', '/test2/cart', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {

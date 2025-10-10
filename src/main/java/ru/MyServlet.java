@@ -1,4 +1,4 @@
-package ru;
+package itis.ru;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

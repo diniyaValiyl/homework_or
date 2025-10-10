@@ -17,8 +17,4 @@
         <servlet-name>OrderServlet</servlet-name>
         <url-pattern>/order</url-pattern>
     </servlet-mapping>
-
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
 </web-app>

@@ -24,7 +24,7 @@ function loadCart() {
 
     // Затем синхронизируем с сервером
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '../cart', true);
+    xhr.open('GET', '/test2/cart', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
@@ -93,7 +93,7 @@ function getObjectLength(obj) {
 // Удаление товара из корзины
 function removeFromCart(productId) {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../cart', true);
+    xhr.open('POST', '/test2/cart', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -108,7 +108,7 @@ function removeFromCart(productId) {
 function clearCart() {
     if (confirm('Вы уверены, что хотите очистить корзину?')) {
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '../cart', true);
+        xhr.open('POST', '/test2/cart', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
@@ -124,7 +124,7 @@ function clearCart() {
 // Оформление заказа
 function makeOrder() {
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../order', true);
+    xhr.open('POST', '/test2/order', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {

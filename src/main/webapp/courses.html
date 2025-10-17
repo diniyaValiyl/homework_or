@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы</title>
+</head>
+<body>
+<h1>Курсы</h1>
+<div id="courses"></div>
+
+<script>
+    fetch('/dentalclinic/courses')
+        .then(r => r.json())
+        .then(courses => {
+            let html = '';
+            courses.forEach(course => {
+                html += `<div style="border:1px solid #ccc; margin:10px; padding:10px;">
+                    <h3>${course.name}</h3>
+                    <p>Цена: ${course.price} руб.</p>
+                    <button onclick="addToCart(${course.id})">Добавить в корзину</button>
+                </div>`;
+            });
+            document.getElementById('courses').innerHTML = html;
+        });
+
+    function addToCart(courseId) {
+        fetch('/dentalclinic/cart?action=add&courseId=' + courseId, {method: 'POST'})
+            .then(() => alert('Добавлено в корзину'));
+    }
+</script>
+</body>
+</html>

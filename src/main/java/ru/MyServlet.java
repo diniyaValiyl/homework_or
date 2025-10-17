@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import java.io.*;
 import java.util.Date;
 
-@WebServlet("/")
+@WebServlet("/my-servlet")
 public class MyServlet extends HttpServlet {
 
     @Override

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Админка</title>
+</head>
+<body>
+<h1>Админка курсов</h1>
+
+<h2>Добавить курс</h2>
+<input type="text" id="name" placeholder="Название">
+<input type="number" id="price" placeholder="Цена">
+<button onclick="addCourse()">Добавить</button>
+
+<h2>Список курсов</h2>
+<div id="courses"></div>
+
+<script>
+    function addCourse() {
+        const name = document.getElementById('name').value;
+        const price = document.getElementById('price').value;
+
+        fetch('/dentalclinic/courses?name=' + encodeURIComponent(name) + '&price=' + price, {method: 'POST'})
+            .then(() => {
+                loadCourses();
+                document.getElementById('name').value = '';
+                document.getElementById('price').value = '';
+            });
+    }
+
+    function loadCourses() {
+        fetch('/dentalclinic/courses')
+            .then(r => r.json())
+            .then(courses => {
+                let html = '';
+                courses.forEach(course => {
+                    html += `<div style="border:1px solid #ccc; margin:10px; padding:10px;">
+                        <h3>${course.name} - ${course.price} руб. (ID: ${course.id})</h3>
+                        <input type="text" id="name-${course.id}" value="${course.name}">
+                        <input type="number" id="price-${course.id}" value="${course.price}">
+                        <button onclick="updateCourse(${course.id})">Редактировать</button>
+                        <button onclick="deleteCourse(${course.id})">Удалить</button>
+                    </div>`;
+                });
+                document.getElementById('courses').innerHTML = html;
+            });
+    }
+
+    function updateCourse(id) {
+        const newName = document.getElementById('name-' + id).value;
+        const newPrice = document.getElementById('price-' + id).value;
+
+        fetch('/dentalclinic/courses?id=' + id + '&name=' + encodeURIComponent(newName) + '&price=' + newPrice, {method: 'PUT'})
+            .then(() => loadCourses());
+    }
+
+    function deleteCourse(id) {
+        if (confirm('Удалить курс?')) {
+            fetch('/dentalclinic/courses?id=' + id, {method: 'DELETE'})
+                .then(() => loadCourses());
+        }
+    }
+
+    loadCourses();
+</script>
+</body>
+</html>

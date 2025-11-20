@@ -21,7 +21,8 @@ public class RegistationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/html/reg.html").forward(req, resp);
+        req.setAttribute("pageTitle", "Регистрация - Клиника Вильдан");
+        req.getRequestDispatcher("/WEB-INF/jsp/registration.jsp").forward(req, resp);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class RegistationServlet extends HttpServlet {
 
         User user = new User(null, login, password);
         userService.save(user);
-        resp.sendRedirect("/login");
+        resp.sendRedirect(req.getContextPath() + "/login");
     }
 }

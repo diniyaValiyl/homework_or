@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход в систему - Клиника Вильдан</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body class="auth-page">
-<header>
-    <div class="container">
-        <h1>Стоматологическая клиника "Вильдан"</h1>
-    </div>
-</header>
-
-<main class="container">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="activePage" value="login" scope="request"/>
+<%@ include file="header.jsp" %>
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
@@ -21,7 +9,13 @@
                 <p>Введите ваши учетные данные</p>
             </div>
 
-            <form class="auth-form" method="post" action="/login">
+            <c:if test="${not empty errorMessage}">
+                <div class="alert alert-error">
+                    <c:out value="${errorMessage}"/>
+                </div>
+            </c:if>
+
+            <form class="auth-form" method="post" action="${pageContext.request.contextPath}/login">
                 <div class="form-group">
                     <label for="username" class="form-label">Имя пользователя</label>
                     <input type="text" id="username" name="username" class="form-input"
@@ -46,13 +40,9 @@
             </form>
 
             <div class="auth-footer">
-                <p>Нет учетной записи? <a href="/registration" class="auth-link">Зарегистрироваться</a></p>
-                <p><a href="/index" class="auth-link">Вернуться на главную</a></p>
+                <p>Нет учетной записи? <a href="${pageContext.request.contextPath}/registration" class="auth-link">Зарегистрироваться</a></p>
+                <p><a href="${pageContext.request.contextPath}/index" class="auth-link">Вернуться на главную</a></p>
             </div>
         </div>
     </div>
-</main>
-
-<script src="/js/main.js"></script>
-</body>
-</html>
+<%@ include file="footer.jsp" %>

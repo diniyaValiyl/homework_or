@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация - Клиника Вильдан</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body class="auth-page">
-<header>
-    <div class="container">
-        <h1>Стоматологическая клиника "Вильдан"</h1>
-    </div>
-</header>
-
-<main class="container">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="activePage" value="registration" scope="request"/>
+<%@ include file="header.jsp" %>
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
@@ -21,7 +9,7 @@
                 <p>Создайте новую учетную запись</p>
             </div>
 
-            <form class="auth-form" method="post" action="/registration">
+            <form class="auth-form" method="post" action="${pageContext.request.contextPath}/registration">
                 <div class="form-group">
                     <label for="login" class="form-label">Имя пользователя</label>
                     <input type="text" id="login" name="login" class="form-input"
@@ -40,13 +28,9 @@
             </form>
 
             <div class="auth-footer">
-                <p>Уже есть аккаунт? <a href="/login" class="auth-link">Войти в систему</a></p>
-                <p><a href="/index" class="auth-link">Вернуться на главную</a></p>
+                <p>Уже есть аккаунт? <a href="${pageContext.request.contextPath}/login" class="auth-link">Войти в систему</a></p>
+                <p><a href="${pageContext.request.contextPath}/index" class="auth-link">Вернуться на главную</a></p>
             </div>
         </div>
     </div>
-</main>
-
-<script src="/js/main.js"></script>
-</body>
-</html>
+<%@ include file="footer.jsp" %>

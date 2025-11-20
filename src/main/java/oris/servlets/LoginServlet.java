@@ -22,7 +22,12 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/html/login_page.html").forward(req, resp);
+        String error = req.getParameter("error");
+        if (error != null) {
+            req.setAttribute("errorMessage", "Неверные учетные данные");
+        }
+        req.setAttribute("pageTitle", "Вход в систему - Клиника Вильdan");
+        req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
     }
 
     @Override
@@ -31,18 +36,18 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         if (username == null || username.trim().isEmpty() || password == null || password.isEmpty()) {
-            resp.sendRedirect("/login?error=Username and password are required");
+            resp.sendRedirect(req.getContextPath() + "/login?error=true");
             return;
         }
 
         UserEntity user = userService.authenticateUser(username, password);
 
         if (user == null) {
-            resp.sendRedirect("/login?error=Invalid credentials");
+            resp.sendRedirect(req.getContextPath() + "/login?error=true");
         } else {
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            resp.sendRedirect("/index");
+            resp.sendRedirect(req.getContextPath() + "/index");
         }
     }
 }

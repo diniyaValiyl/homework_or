@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стоматологическая клиника Вильдан - Главная</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<header>
-    <div class="container">
-        <h1>Стоматологическая клиника "Вильдан"</h1>
-        <nav>
-            <ul>
-                <li><a href="/index" class="nav-link active">Главная</a></li>
-                <li><a href="/products" class="nav-link">Курсы</a></li>
-                <li><a href="/cart" class="nav-link">Корзина</a></li>
-                <li><a href="/login" class="nav-link">Вход</a></li>
-                <li><a href="/registration" class="nav-link">Регистрация</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main class="container">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="activePage" value="index" scope="request"/>
+<%@ include file="header.jsp" %>
     <section class="hero">
         <div class="hero-content">
             <h2>Профессиональные курсы стоматологии</h2>
             <p class="hero-subtitle">Повышение квалификации для стоматологов и ортодонтов</p>
             <div class="hero-actions">
-                <a href="/products" class="btn btn-primary">Смотреть курсы</a>
-                <a href="/login" class="btn btn-secondary">Войти в систему</a>
+                <a href="${pageContext.request.contextPath}/products" class="btn btn-primary">Смотреть курсы</a>
+                <c:if test="${empty sessionScope.user}">
+                    <a href="${pageContext.request.contextPath}/login" class="btn btn-secondary">Войти в систему</a>
+                </c:if>
             </div>
         </div>
     </section>
@@ -74,25 +55,4 @@
             <div class="stat-label">Успешных случаев</div>
         </div>
     </section>
-</main>
-
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Стоматологическая клиника "Вильдан"</h3>
-                <p>Профессиональное обучение стоматологов с 2010 года</p>
-            </div>
-            <div class="footer-links">
-                <a href="/products">Курсы</a>
-                <a href="/login">Вход</a>
-                <a href="/registration">Регистрация</a>
-            </div>
-        </div>
-        <p class="footer-copyright">&copy; 2024 Стоматологическая клиника "Вильдан". Все права защищены.</p>
-    </div>
-</footer>
-
-<script src="/js/main.js"></script>
-</body>
-</html>
+<%@ include file="footer.jsp" %>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Клиника Вильдан</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Корзина</h1>
+        <nav>
+            <ul>
+                <li><a href="/index" class="nav-link">Главная</a></li>
+                <li><a href="/products" class="nav-link">Курсы</a></li>
+                <li><a href="/cart" class="nav-link active">Корзина <span id="cart-counter" class="cart-counter">0</span></a></li>
+                <li><a href="/logout" class="nav-link" onclick="logout(); return false;">Выйти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="cart-section">
+        <div id="cart-container">
+            <!-- Содержимое корзины загружается через JavaScript -->
+            <div class="loading-message">Загрузка корзины...</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Стоматологическая клиника "Вильдан"</p>
+    </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/cart.js"></script>
+</body>
+</html>
